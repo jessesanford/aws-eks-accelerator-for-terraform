@@ -31,6 +31,16 @@ output "cluster_name" {
   value       = var.create_eks ? module.aws_eks.cluster_id : "EKS Cluster not enabled"
 }
 
+output "cluster_endpoint" {
+  description = "Endpoint for EKS control plane."
+  value       = var.create_eks ? module.aws_eks.cluster_endpoint : "EKS Cluster not enabled"
+}
+
+output "cluster_certificate_authority_data" {
+  description = "This is the base64 encoded certificate data required to communicate with your cluster."
+  value       = var.create_eks ? module.aws_eks.cluster_certificate_authority_data : "EKS Cluster not enabled"
+}
+
 output "configure_kubectl" {
   description = "Configure kubectl: make sure you're logged in with the correct AWS profile and run the following command to update your kubeconfig"
   value       = var.create_eks ? "aws eks --region ${data.aws_region.current.id} update-kubeconfig --name ${module.aws_eks.cluster_id}" : "EKS Cluster not enabled"
