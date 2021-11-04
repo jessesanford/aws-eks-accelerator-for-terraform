@@ -331,6 +331,7 @@ data "aws_iam_policy_document" "eks_lb_controller_assume_policy" {
 # IAM role for eks alb controller
 resource "aws_iam_role" "eks_lb_controller_role" {
   name               = "${var.eks_cluster_id}-lb-controller-role"
+  permissions_boundary = var.iam_permission_boundary_arn
   assume_role_policy = data.aws_iam_policy_document.eks_lb_controller_assume_policy.json
 }
 
