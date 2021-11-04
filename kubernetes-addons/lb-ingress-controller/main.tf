@@ -46,7 +46,7 @@ resource "helm_release" "lb_ingress" {
   render_subchart_notes      = local.lb_ingress_controller_helm_app["render_subchart_notes"]
   disable_openapi_validation = local.lb_ingress_controller_helm_app["disable_openapi_validation"]
   wait                       = local.lb_ingress_controller_helm_app["wait"]
-  wait_for_jobs              = local.lb_ingress_controller_helm_app["wait_for_jobs"]
+  #wait_for_jobs              = local.lb_ingress_controller_helm_app["wait_for_jobs"]
   dependency_update          = local.lb_ingress_controller_helm_app["dependency_update"]
   replace                    = local.lb_ingress_controller_helm_app["replace"]
 
