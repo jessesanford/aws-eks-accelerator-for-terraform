@@ -47,7 +47,7 @@ resource "helm_release" "cluster_autoscaler" {
   render_subchart_notes      = local.cluster_autoscaler_helm_app["render_subchart_notes"]
   disable_openapi_validation = local.cluster_autoscaler_helm_app["disable_openapi_validation"]
   wait                       = local.cluster_autoscaler_helm_app["wait"]
-  wait_for_jobs              = local.cluster_autoscaler_helm_app["wait_for_jobs"]
+  #wait_for_jobs              = local.cluster_autoscaler_helm_app["wait_for_jobs"]
   dependency_update          = local.cluster_autoscaler_helm_app["dependency_update"]
   replace                    = local.cluster_autoscaler_helm_app["replace"]
 

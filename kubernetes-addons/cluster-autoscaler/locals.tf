@@ -30,7 +30,7 @@ locals {
     render_subchart_notes      = true
     disable_openapi_validation = false
     wait                       = true
-    wait_for_jobs              = false
+    #wait_for_jobs              = false
     dependency_update          = false
     replace                    = false
     description                = "Cluster AutoScaler helm Chart deployment configuration"
